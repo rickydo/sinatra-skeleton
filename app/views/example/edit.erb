@@ -1,0 +1,17 @@
+<!-- view to show editing form for example -->
+<!-- editing examples requires a fake put method (a fake delete method is also a post route)-->
+<div class="container">
+  <h2> Edit example </h2>
+  <form action = "/examples/<%=@example.id%>" method = "post">
+    <input type="hidden" name="_method" value="put">
+    <input type = "text" name = "example[name]" value = "<%=@example.name%>" ><br>
+    <input type = "text" name = "example[email]" value = "<%=@example.email%>"><br>
+    <input type="submit" value="Update">
+  </form>
+  <form action = "/examples/<%=@example.id%>" method = "post">
+    <input type="hidden" name="_method" value="delete">
+    <input type ="submit" value = "Delete">
+  </form>
+
+  <a href ="/examples/show">Back to Examples</a>
+</div>

@@ -6,9 +6,8 @@ end
 
 post '/sessions' do
   # sign-in
-  @email = params[:email]
-  user = User.authenticate(@email, params[:password])
-  if user
+  user = User.find_by_email(params[:email])
+  if user && user.authenticate(params[:password])
     # successfully authenticated; set up session and redirect
     session[:user_id] = user.id
     redirect '/'

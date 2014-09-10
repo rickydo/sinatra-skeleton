@@ -55,8 +55,6 @@ namespace :generate do
     end
   end
 
-
-
   desc "Create an empty model spec in spec, e.g., rake generate:spec NAME=user"
   task :spec do
     unless ENV.has_key?('NAME')
@@ -115,8 +113,8 @@ namespace :db do
     require APP_ROOT.join('db', 'seeds.rb')
   end
 
-  desc "YOLO"
-  task :yolo => [:drop, :create, :migrate, :seed]
+  desc "yodo"
+  task :yodo => [:drop, :create, :migrate, :seed]
 
   desc "Returns the current schema version number"
   task :version do

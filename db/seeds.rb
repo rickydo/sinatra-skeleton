@@ -1,7 +1,6 @@
-require 'faker'
+# add destroy_all to classes so every seed starts fresh without having to drop db
+User.destroy_all
 
-# create a few users
-User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com', :password => 'password'
-5.times do
-  User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password'
-end
+
+User.create!(name: 'rick', email: 'rick@gmail.com', password: 'password', password_confirmation: "password")
+
