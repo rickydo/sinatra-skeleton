@@ -1,1 +1,22 @@
-<!-- to show a specific instance such as a single comment -->
+<!-- to show a specific instance such as a single example -->
+<!-- a table format if needed -->
+
+<div class ="container">
+  <h3>Here are your examples!</h3>
+  <table id="messages" border="1" style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Edit</th>
+    </tr>
+    <% @user.examples.order("name ASC").each do |example| %>
+    <tr>
+      <td><%= example.name %></td>
+      <td><%= example.email %></td>
+      <td><a href = "/examples/<%=example.id%>/edit">Edit/Delete</a></td>
+    </tr>
+    <% end %>
+  </table>
+  <br>
+  <a href ="/examples/new">Add example</a>
+</div>
