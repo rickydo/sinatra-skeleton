@@ -18,5 +18,5 @@ gem 'bcrypt-ruby'
 gem 'shotgun'
 
 group :development, :test do
-  gem 'faker'
+  gem 'faker', '>= 1.4.3'
 end
